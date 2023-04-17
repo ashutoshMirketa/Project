@@ -1,0 +1,36 @@
+<apex:page controller="AttendeeRegistrationController">
+    <apex:form >
+        <apex:pageBlock title="Attendee Registration">
+            <div  style="border:2px solid rgb(206, 206, 206); background: rgb(249, 210, 173);">
+            <apex:pageBlockSection title="Attendee Details" columns="2" collapsible="true" >
+                <apex:inputField value="{!attndee.Name}" />
+                <apex:inputField value="{!attndee.Phone__c }" />
+                <apex:inputField value="{!attndee.Email__c}" />
+                <apex:inputField value="{!attndee.Company_Name__c}" />
+                <apex:inputField value="{!evtAttndee.Name}" />
+                <apex:inputField value="{!evtAttndee.Event__c}" rendered="{!bool}"/>
+                <apex:outputField value="{!evtAttndee.Event__c}" rendered="{!NOT(bool)}"/>
+            </apex:pageBlockSection>
+           <apex:pageBlockSection title="Attendee Location" columns="2" collapsible="true">
+                <apex:inputField value="{!loc.Name}" />
+                <apex:inputField value="{!loc.Street__c}" />
+                <apex:inputField value="{!loc.City__c}" />
+                <apex:inputField value="{!loc.State__c}" />
+                <apex:inputField value="{!loc.Country__c}" />
+                <apex:inputField value="{!loc.Postal_Code__c}" />
+            </apex:pageBlockSection>
+            </div>
+            <div align="center">
+                <apex:commandButton action="{!save}" value="Save" style="
+                padding:5px 10px;
+                color:#FFFFFF;
+                border-color:#4a99ce;
+                background:#5db2f3;
+                font-weight:bold;
+                font-size:13px;
+                line-height:18px;
+                margin:10px 10px" />
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

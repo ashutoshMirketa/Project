@@ -1,0 +1,47 @@
+<apex:page controller="EventRegistrationController" id="theForm">
+    <apex:form >
+        <apex:pageBlock title="Event Registration">
+            <div  style="border:2px solid rgb(206, 206, 206); background: rgb(249, 210, 173);">
+            <apex:pageBlockSection title="Event Organizer" collapsible="True" columns="2">
+                <apex:inputField value="{!evtOrganizer.Name}" />
+                <apex:inputField value="{!evtOrganizer.Email__c}" />
+                <apex:inputField value="{!evtOrganizer.Alternative_Email__c}" />
+                <apex:inputField value="{!evtOrganizer.Phone__c}" />
+                <apex:inputField value="{!evtOrganizer.Alternative_Phone__c}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title=" Location " collapsible="True" columns="2">
+                <apex:inputField value="{!loc.Name}" />
+                <apex:inputField value="{!loc.Street__c}" />
+                <apex:inputField value="{!loc.City__c}" />
+                <apex:inputField value="{!loc.Landmark__c}" />
+                <apex:inputField value="{!loc.State__c}" />
+                <apex:inputField value="{!loc.Postal_Code__c}" />
+                <apex:inputField value="{!loc.Country__c}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Event " collapsible="True" columns="2">
+                <apex:inputField value="{!evt.Name__c}" />
+                <apex:inputField value="{!evt.Event_Type__c}" />
+                <apex:inputField value="{!evt.Live__c}" />
+                <apex:inputCheckbox value="{!evt.Location_verified__c}" />
+                <apex:inputField value="{!evt.Max_Seats__c}" />
+                <apex:inputField value="{!evt.Recurring__c}" />
+                <apex:inputField value="{!evt.Fequency__c}" />
+                <apex:inputField value="{!evt.Start__c}" />
+                <apex:inputField value="{!evt.End__c}" />
+                <apex:inputField value="{!evt.Status__c}" />
+            </apex:pageBlockSection>
+        </div>
+            <div align="center" draggable="false">
+                <apex:commandButton value="Save" action="{!save}" rerender="theForm" style="
+                padding:5px 10px;
+                color:#FFFFFF;
+                border-color:#4a99ce;
+                background:#5db2f3;
+                font-weight:bold;
+                font-size:13px;
+                line-height:18px;
+                margin:10px 10px"/>
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,44 @@
+<apex:page controller="EventSpeakerController">
+
+    <apex:form >
+
+        <apex:pageBlock title="Event Speaker">
+            <div  style="border:2px solid rgb(206, 206, 206); background: rgb(249, 210, 173);">
+
+            <apex:pageBlockSection columns="2">
+
+                <apex:inputField value="{!evtSpkr.Name}" />
+
+                <apex:inputField value="{!spkr.Name}" />
+
+                <apex:inputField value="{!spkr.Email__c}" />
+
+                <apex:inputField value="{!spkr.Phone__c}" />
+
+                <apex:inputField value="{!evtSpkr.Event__c}" rendered="{!bool}" />
+
+                <apex:outputField value="{!evtSpkr.Event__c}" rendered="{!NOT(bool)}" />
+
+
+            </apex:pageBlockSection>
+            </div>
+            
+            <div align="center">
+ 
+                <apex:commandButton action="{!save}" value="Save" style="
+                padding:5px 10px;
+                color:#FFFFFF;
+                border-color:#4a99ce;
+                background:#5db2f3;
+                font-weight:bold;
+                font-size:13px;
+                line-height:18px;
+                margin:10px 10px" />
+
+            </div>
+
+        </apex:pageBlock>
+
+    </apex:form>
+
+</apex:page>
